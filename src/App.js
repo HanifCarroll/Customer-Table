@@ -15,9 +15,12 @@ class App extends Component {
   };
 
   componentDidMount() {
+    // Put the filter in the state, because it's used throughout
+    // the component's lifecycle.
     this.setState({ fuseFilter: this.fuseFilter() });
   }
 
+  // Column options to be passed into the table component.
   renderColumns = () => {
     return [
       { Header: "Id", accessor: "id", maxWidth: 60 },
@@ -49,6 +52,9 @@ class App extends Component {
   };
 
   fuseFilter = () => {
+    // Create a new Fuse object with the corresponding options, then return
+    // the Fuse object to be used in searching.
+
     const attributes = Object.keys(this.state.customers[0]).map(key =>
       String(key)
     );
@@ -78,18 +84,23 @@ class App extends Component {
   onEnterPress = e => {
     const { search, fuseFilter } = this.state;
 
+    // If there's a search term, execute the search.
     if (this.state.search.length && e.keyCode === 13) {
       return this.setState({
         filteredCustomers: fuseFilter.search(search)
       });
     }
 
+    // If there isn't a search term, reset the data view.
     if (e.keyCode === 13)
       this.setState({ filteredCustomers: this.state.customers });
   };
 
   onSearchClick = e => {
     const { search, fuseFilter } = this.state;
+
+    // Similar to onEnterPress, if there's a search term, then execute.
+    // If not, reset the data view.
 
     if (this.state.search.length) {
       return this.setState({ filteredCustomers: fuseFilter.search(search) });

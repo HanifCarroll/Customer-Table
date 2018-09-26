@@ -1,8 +1,6 @@
 # Customer Table
 
-By [Hanif Carroll](mailto:HanifCaroll@gmail.com)
-
-[https://HanifCarroll.com](https://HanifCarroll.com)
+By [Hanif Carroll](mailto:HanifCaroll@gmail.com) - [https://HanifCarroll.com](https://HanifCarroll.com)
 
 ## Instructions
 
@@ -17,6 +15,13 @@ If you'd like to run the app locally:
 4. Start your server using `npm start`
 5. Navigate to app in [browser](http://localhost:3000)
 
+## Requirements
+
+#### Create an app to search and view customer data.
+
+The app lists results in a paginated table, and searching for terms updates the
+list with a new, filtered list of data.
+
 ## Discussion
 
 The app uses the following technologies: HTML, CSS, and React.
@@ -26,10 +31,3 @@ The two external libraries used are:
 
 1. [Fuse.js](http://fusejs.io/) for search functionality.
 2. [React Table](https://react-table.js.org/#/story/readme) for the table functionality.
-
-## Requirements
-
-#### Create an app to search and view customer data.
-
-The app lists results in a paginated table, and searching for terms updates the
-list with a new, filtered list of data.
